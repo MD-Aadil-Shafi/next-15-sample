@@ -1,5 +1,6 @@
 import Button from '@/components/utils/Button';
 import Heading from '@/components/utils/Heading';
+import SEOHeader from '@/components/utils/SEOHeader';
 import { getSingleBlog } from '@/sampleApiActions/sampleApiAction';
 
 type blogDataType = {
@@ -18,6 +19,9 @@ const page = async({params}:{params: {id: string}}) => {
   const style = 'font-bold mb-3'
   return (
     <section>
+        <SEOHeader title={blogData?.title}
+        desc={blogData?.body}
+        keyword='blog, next js, seo'/>
       <Heading title="Blog Detail"/>
       <p className='text-lg'>Blog Id: <span className={style}>{blogData?.id}</span></p>
       <p className='text-lg'>Blog Title: <span className={style}>{blogData?.title}</span></p>

@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Next Sample App",
-  description: "Sample app with typeScript, context, hooks, forms etc",
-};
+// export const metadata: Metadata = {
+//   title: "Next Sample App",
+//   description: "Sample app with typeScript, context, hooks, forms etc",
+// };
 
 export default function RootLayout({
   children,

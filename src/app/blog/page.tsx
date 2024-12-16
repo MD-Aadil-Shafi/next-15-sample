@@ -1,5 +1,6 @@
 import Button from '@/components/utils/Button';
 import Heading from '@/components/utils/Heading';
+import SEOHeader from '@/components/utils/SEOHeader';
 import { getSampleBlogs } from '@/sampleApiActions/sampleApiAction';
 import Link from 'next/link';
 
@@ -18,6 +19,9 @@ const page = async() => {
 
   return (
     <div>
+        <SEOHeader title='Blog in next js 15'
+        desc='Sample blog section for next js 15'
+        keyword='blog, next js, api in next js, ssr in next js'/>
         <Heading title='API data of users'/>
         <ul className='space-y-4 p-4'>
             <table>

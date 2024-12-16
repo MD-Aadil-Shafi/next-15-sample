@@ -9,7 +9,7 @@ const AuthWrapper = ({children}:{children:React.ReactNode}) => {
     const router = useRouter();
 
     useEffect(()=>{
-        if(!user?.email){
+        if(user?.email === ""){
             router.push('/login')
         }
     },[user])

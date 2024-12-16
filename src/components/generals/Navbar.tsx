@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className='flex items-center justify-between p-5 bg-zinc-800'>
         <Link href={"/"} className='text-sky-200 text-lg'>Sample Site</Link>
 
-        {user?.email ?
+        {user?.email !== "" ?
         <div className='flex gap-2 items-center'>
         <button className='bg-neutral-300 p-2 px-4 rounded-md text-neutral-900'
         onClick={handleLogout}

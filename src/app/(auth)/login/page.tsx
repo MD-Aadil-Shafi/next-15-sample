@@ -13,8 +13,8 @@ const page = () => {
     },[user])
 
     const [data, setData] = useState({
-        email: '',
-        password:'',
+        email: 'test@email.com',
+        password:'123456',
     })
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         setData({...data,[e.target.name]:e.target.value})
@@ -43,6 +43,7 @@ const page = () => {
         onChange={handleChange}
         id="email"
         type="email"
+        value={data?.email}
         
       />
     </div>
@@ -55,6 +56,7 @@ const page = () => {
         type="password"
         name='password'
         onChange={handleChange}
+        value={data?.password}
       />
     </div>
 

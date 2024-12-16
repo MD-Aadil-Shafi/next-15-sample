@@ -12,7 +12,7 @@ const Home = () => {
       {user?.email ? 
       <div className='flex items-center gap-2 flex-wrap'>
       {homeData?.map((item, index)=>(
-        <Card item={item}/>
+        <Card item={item} key={index}/>
       ))}
       </div>
       :

@@ -1,14 +1,14 @@
 export const homeData = [
     {
-        title: "Album", 
-        link: "/album",
-        description: "Server component to fetch album by id params from public api",
+        title: "Blog",
+        link: "/blog",
+        description: "Server component with dedicated error and loading page with public api",
         disabled: false,
     },
     {
-        title: "Product",
-        link: "/product-server",
-        description: "With dedicated error and loading page with public api",
+        title: "Album", 
+        link: "/album",
+        description: "Server component to fetch album by id params from public api",
         disabled: false,
     },
     {

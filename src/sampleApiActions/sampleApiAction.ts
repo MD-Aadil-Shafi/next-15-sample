@@ -1,9 +1,9 @@
-export const getSampleUsers = async()=>{
+export const getSampleBlogs = async()=>{
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/users'
+        'https://jsonplaceholder.typicode.com/posts'
     );
-    const sampleUsers = await response.json()
-    return sampleUsers;
+    const data = await response.json()
+    return data;
 }
 
 export const getAlbum = async(id:string)=>{
@@ -12,4 +12,12 @@ export const getAlbum = async(id:string)=>{
     );
     const album = await response.json()
     return album;
+}
+
+export const getSingleBlog = async(id:string)=>{
+    const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+    const data = await response.json()
+    return data;
 }

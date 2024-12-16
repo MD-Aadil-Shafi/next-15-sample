@@ -1,8 +1,11 @@
+import Heading from '@/components/utils/Heading'
 import Link from 'next/link'
 
-const Page = () => {
+const Page = async() => {
+
   return (
     <section>
+      <Heading title='Album Sample'/>
       <div className='my-20 text-center'>
         <Link href={'/album/2'}>View album no. 2</Link>
       </div>

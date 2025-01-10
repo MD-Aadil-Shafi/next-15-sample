@@ -13,7 +13,7 @@ type CardType = {
 
 const Card = ({item}:CardType) => {
   return (
-    <div className='w-[320px] min-h-[160px] p-3 rounded-md bg-zinc-700' key={item?.title}>
+    <div className='w-[320px] min-h-[160px] p-3 rounded-md bg-zinc-50 shadow text-slate-600' key={item?.title}>
         <p className='font-bold mb-3'>{item?.title}</p>
         {item?.disabled ? 
         <p className='mb-3 text-xs text-blue-400'>{item?.link}</p>

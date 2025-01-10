@@ -1,6 +1,5 @@
 import Button from '@/components/utils/Button';
 import Heading from '@/components/utils/Heading';
-import SEOHeader from '@/components/utils/SEOHeader';
 import { getSingleBlog } from '@/sampleApiActions/sampleApiAction';
 
 type blogDataType = {
@@ -10,18 +9,38 @@ type blogDataType = {
   body: string,
 }
 
+export async function generateMetadata({params}:{params: {id: string}}) {
+  const {id} = await params;
+  const blogData:blogDataType = await getSingleBlog(id);
+
+  return {
+    title: `${blogData.title}`,
+    description: blogData.body,
+  };
+}
+export async function getServerSideProps({ params }: { params: { id: string } }) {
+  const blogData: blogDataType = await getSingleBlog(params.id);
+
+  return {
+    props: {
+      blogData,
+    },
+  };
+}
+
+
 const page = async({params}:{params: {id: string}}) => {
   
     const {id} = await params;
   const blogData:blogDataType = await getSingleBlog(id);
 
-  console.log('album data',blogData)
+
+  console.log('single post data',blogData)
   const style = 'font-bold mb-3'
   return (
-    <section>
-        <SEOHeader title={blogData?.title}
-        desc={blogData?.body}
-        keyword='blog, next js, seo'/>
+    <>
+    
+    <section className='text-slate-600'>
       <Heading title="Blog Detail"/>
       <p className='text-lg'>Blog Id: <span className={style}>{blogData?.id}</span></p>
       <p className='text-lg'>Blog Title: <span className={style}>{blogData?.title}</span></p>
@@ -29,6 +48,7 @@ const page = async({params}:{params: {id: string}}) => {
 
       <Button title='Back' link='/blog'/>
     </section>
+    </>
   )
 }
 

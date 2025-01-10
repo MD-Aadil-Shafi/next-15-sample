@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, createContext, useState, useMemo } from "react";
+import React, { useContext, createContext, useState, useEffect } from "react";
 
 type userType = {
     name: string,
@@ -30,10 +30,10 @@ const GlobalContext = ({children}:{children:React.ReactNode}) =>{
             console.error('Error parsing JSON from localStorage:', error);
           }
     }
-    useMemo(()=>{
+    useEffect(()=>{
         getUser();
     },[])
-console.log('user', user)
+// console.log('user', user)
 
     const handleUser = (val:userType) =>{
         localStorage.setItem('user', JSON.stringify(val));

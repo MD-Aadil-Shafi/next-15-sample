@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Next Sample App",
-//   description: "Sample app with typeScript, context, hooks, forms etc",
-// };
+export const metadata: Metadata = {
+  title: "Next Sample App",
+  description: "Sample app with typeScript, context, hooks, forms etc",
+};
 
 export default function RootLayout({
   children,
@@ -27,14 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-200`}
       >
         <GlobalContext>
         <Navbar/>
         <section className="min-h-[calc(100vh-134px)] p-5">
-        <AuthWrapper children={children}/>
+        <AuthWrapper>
+          {children}
+        </AuthWrapper>
         </section>
         <Footer/>
         </GlobalContext>
